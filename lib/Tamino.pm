@@ -4,7 +4,7 @@ package Tamino;
 
 use vars (qw/$VERSION/);
 
-$VERSION = 0.01;
+$VERSION = 0.02;
 
 use Class::Accessor;
 use Class::Data::Inheritable;

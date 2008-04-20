@@ -663,7 +663,7 @@ sub forcearray ($;@) {
 
 =over 4
 
-=item forcearray
+=item plaintext
 
     $t->plaintext($boolean);
 

@@ -92,7 +92,7 @@ sub execute ($;$) {
     return $self->tran->_cmd({ $vars?(map { '$'.$_ => $vars->{$_} } keys %$vars):(), _execute => 'prepared-xquery', _handle => $self->{handle} }, result => 'xq:result');
 }
 
-=head2 execute
+=head2 open_cursor
 
     $cur = $stmt->open_cursor(\%vars_values, %cursor_options);
     $cur = $stmt->open_cursor({ y => 'string', z => 123 }, fetch_size => 10, scrollable => 1) or die $t->error;
@@ -113,7 +113,7 @@ sub open_cursor ($;$@) {
     );
 }
 
-=head2 execute
+=head2 destroy
 
     $stmt->destroy;
 
