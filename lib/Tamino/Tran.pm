@@ -367,7 +367,7 @@ sub prepare ($$$) {
         for $x in collection('mycollection')/doctype/xxx[@yyy=%s][zzz='%s']
         return $x
     }, "('y1','y2')", "z1") or die $t->error;
-    print $xml->sprint;
+    print XML::Simple::XMLout($xml);
 
 Returns L<XML::Simple>-like tree object representing the result of C<< sprintf($query_fmt, @args) >>-X-Query
 This L<sprintf|perlfunc/sprintf> trick is used to avoid interpolation crap,
@@ -429,7 +429,7 @@ sub xquery_cursor ($$;@) {
 =over 4
 
     my $xml = $t->xql($query_fmt, @args) or die $t->error;
-    print $xml->sprint;
+    print XML::Simple::XMLout($xml);
 
 The same as L</xquery>, except that it uses B<XQuery>, not B<X-Query>.
 What is the difference? I don't know. Read the documentation for Tamino.
